@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?> <!-- Used for CSS -->
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.Text ?> <!-- Allow use of <Text> element -->
+
+<VBox fx:id="gameScene" id="mainBody" prefHeight="400.0" prefWidth="650.0" 
+      xmlns:fx="http://javafx.com/fxml/1" alignment="TOP_CENTER"
+      fx:controller="gamePack.GameController">
+    
+    <Label text="CIVIL NUMBERS"  id="titleTop">
+        <padding>
+            <Insets top= "20" bottom = "20" left = "25" right = "25"/> 
+        </padding>  
+        <VBox.margin>
+            <Insets top="10" bottom="10" />
+        </VBox.margin>
+    </Label>
+    
+    <GridPane id ="upperInterface" gridLinesVisible="false" alignment="CENTER"
+              prefWidth="500" >
+        
+                                    <!--Player Area-->
+        <VBox fx:id="leftSide" GridPane.columnIndex="0" GridPane.columnSpan="3"
+              alignment="TOP_CENTER" prefWidth="200" id="1">
+            <VBox alignment="TOP_CENTER" prefHeight="125" id="playerInfo" >
+                    <Label text="Player" id="playerID" prefWidth="200" 
+                           alignment="CENTER" />
+                <HBox alignment="CENTER_LEFT" id ="healthBox" prefHeight="30" >
+<!--                    <padding>
+                        <Insets top="3" bottom="3" />
+                    </padding>-->
+                    <Label text="Health:" alignment="CENTER" prefWidth="100" />
+                    <Label text="100" fx:id="hitPoints" id="hitPoints" />
+                </HBox>
+                <HBox id="scoreBox" prefWidth="200" alignment="CENTER_LEFT" >
+                    <Label fx:id="scoreLabel" prefWidth="100" prefHeight="30" alignment="CENTER"/>
+                    <Label fx:id="scoreCard" id="score" prefWidth="20"
+                        alignment="CENTER_LEFT" />
+                    <Label fx:id="scoreGoal" />
+                </HBox>
+                <HBox prefWidth="200" alignment="CENTER_LEFT">
+                    <Label fx:id="pointsLabel" prefWidth="100" alignment="CENTER" />
+                    <Label fx:id="pointsAquired" />
+                </HBox>
+                <HBox prefWidth="200" alignment="CENTER_LEFT">
+                    <Label fx:id="damageLabel" prefWidth="100" alignment="CENTER"/>
+                    <Label fx:id="damageDealt" />
+                </HBox>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="125" id="controlBox" >
+                <padding>
+                    <Insets top="7"/>
+                </padding>
+            <Label text="▲" fx:id="upBtn" id="upBtn" alignment="CENTER"
+                    prefWidth="70" />
+            <HBox alignment="CENTER" >
+                <Label text="◄" fx:id="leftBtn" id="leftBtn" alignment="CENTER"
+                     prefWidth="70" >
+                    <padding>
+                        <Insets top="-5" bottom="-5" />
+                    </padding>
+                </Label>
+                <Label text="►" fx:id="rightBtn" id="rightBtn" alignment="CENTER" 
+                     prefWidth="70" >
+                   <padding>
+                        <Insets top="-5" bottom="-5" />
+                    </padding>
+                </Label>
+            </HBox>
+            <Label text="▼" fx:id="downBtn" id="downBtn" alignment="CENTER"
+                    prefWidth="70" />
+            <HBox alignment="CENTER" >
+                <Button text="↵ _Restart" fx:id="resetBtn" onAction="#restartGame" 
+                    prefWidth="90" />
+                <Button text="_Quit" fx:id="closeBtn" onAction="#quitGame" 
+                    prefWidth="90" />
+            </HBox>
+            </VBox>
+        </VBox>
+
+
+                            <!--Gameplay area-->
+        <StackPane GridPane.columnIndex="3" GridPane.columnSpan="3" 
+                  prefWidth="250" id="2" alignment="CENTER" >
+            <VBox fx:id="midSide"  >
+            </VBox>
+            <Label fx:id="userFeedback" text="Press any button to begin." 
+            prefHeight ="250" prefWidth="250" alignment="CENTER" />
+        </StackPane>
+        
+        
+                                <!--Enemy area-->
+        <VBox fx:id="rightSide" GridPane.columnIndex="6" GridPane.columnSpan="3"
+              prefWidth="200" alignment="TOP_CENTER" id="3" >
+            <VBox alignment="TOP_CENTER" prefHeight="125" id="enemyInfo" >
+            <Label text="Enemy" id="enemyID" prefWidth="200" 
+                   alignment="CENTER" />
+            
+                <VBox alignment="CENTER">
+                    <padding>
+                        <Insets top="5" />
+                    </padding>
+                    <Label fx:id="enemyHPLabel" />
+                    <Label text="" fx:id="enemyHP" id="enemyHP" 
+                           alignment="CENTER" prefWidth="200" />
+                    <Label fx:id="enemiesKilled" />
+                </VBox>
+            </VBox>
+            
+            <Label text="" fx:id="messageReport"
+                   id="messageReport" >
+                <padding>
+                    <Insets top="10" />
+                </padding>
+            </Label>
+        </VBox>
+    </GridPane> 
+    
+    <Label text="Fill your points to win! Points are aquired by picking them
+up from tiles, and by harming the enemy." id="info" />
+    <Label text="Units are harmed when stepping on the other units trail. Doing
+so causes a 'Blast'." id="info" />
+    <Label text="The blast will destroy any points tiles, and harm the other
+unit if hit." id="info" />
+    <Label text="Killing the enemy will award a small points bounty, and spawn
+a new one." id="info" />
+
+    <stylesheets>
+        <URL value="@gameStyle.css" />
+    </stylesheets>
+    
+</VBox>

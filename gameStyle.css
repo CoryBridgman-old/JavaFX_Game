@@ -1,0 +1,85 @@
+
+
+#titleTop{
+    -fx-font-family: 'webhostinghub-glyphs';
+    -fx-font-size: 22px;
+    
+    -fx-border-width: 1;
+    -fx-border-style: dashed;
+}
+
+#upperInterface{
+    -fx-border-width: 1 0 1 0;
+    -fx-border-style: solid;
+}
+
+#playerInfo, #enemyInfo{
+    -fx-border-width: 0 0 1.5 0;
+    -fx-border-style: dashed;
+}
+
+#playerID, #enemyID{
+    -fx-font-family: '1942 report';
+    -fx-font-size: 17px;
+    -fx-border-width: 0 0 0.5 0;
+    -fx-border-style: solid;
+}
+
+#1, #2, #3{
+    -fx-border-width: 0 0.5 0 0.5;
+    -fx-border-style: dotted;
+}
+#leftBtn, #rightBtn{
+    -fx-font-size: 19px;
+}
+#leftBtn, #rightBtn, #upBtn, #downBtn{
+    -fx-background-color:rgb(225,225,225);
+    -fx-border-width: 1;
+    -fx-border-style: solid;
+}
+#controlBox{
+    -fx-spacing: 5;
+}
+
+#gameSpace{
+    -fx-border-width: 0.5;
+    -fx-border-style: solid;
+}
+#gameBlock{
+    /*-fx-padding: 2.5px;*/
+    -fx-alignment: center;
+    -fx-pref-width: 19;
+    -fx-pref-height: 20.5;
+    -fx-border-width: 0.25;
+    -fx-border-style: solid;
+}
+
+#mapStats{
+    -fx-font-family: 'webhostinghub-glyphs';
+    -fx-font-size: 8px;
+}
+
+#scoreBox{
+    -fx-border-width: 0.5 0 0 0;
+    -fx-border-style: solid;
+}
+#scoreLabel, #scoreCard{
+    -fx-font-size: 15px;
+}
+
+#enemyHP{
+    -fx-font-size:35px;
+    -fx-text-fill: rgb(255,120,120);
+    -fx-font-weight: bold;
+}
+
+#healthBox{
+    -fx-background-color: rgb(230,230,230);
+}
+#hitPoints{
+    -fx-font-weight:bold;
+}
+
+#info{
+    -fx-font-size:0.8em;
+}
